@@ -1,0 +1,15 @@
+# Node
+node_modules
+.next
+dist
+.turbo
+
+# Java/Gradle
+.gradle
+build
+out
+*.iml
+
+# OS/IDE
+.DS_Store
+.idea
