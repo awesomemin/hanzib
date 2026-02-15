@@ -1,4 +1,4 @@
-package com.hanzib.api.family.dto.response;
+package com.hanzib.api.family.controller.dto.response;
 
 import com.hanzib.api.family.Family;
 

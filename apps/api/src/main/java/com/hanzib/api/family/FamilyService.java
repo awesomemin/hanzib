@@ -1,6 +1,6 @@
 package com.hanzib.api.family;
 
-import com.hanzib.api.family.dto.CreateFamilyRequest;
+import com.hanzib.api.family.controller.dto.request.CreateFamilyRequest;
 import com.hanzib.api.family.exception.CreatedByParentNotFoundException;
 import com.hanzib.api.family.exception.FamilyAlreadyExistsException;
 import com.hanzib.api.parent.Parent;
@@ -27,8 +27,12 @@ public class FamilyService {
             throw new FamilyAlreadyExistsException(createdBy.getId());
         }
         Family family = Family.of(createdBy);
+        createdBy.joinFamily(family);
         familyRepository.save(family);
         return family;
     }
 
+    public Family findOneById(Long id) {
+        return familyRepository.findOneById(id);
+    }
 }

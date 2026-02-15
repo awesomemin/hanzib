@@ -31,4 +31,8 @@ public class Parent extends BaseEntity {
         return new Parent(email);
     }
 
+    public void joinFamily(Family family) {
+        this.family = family;
+    }
+
 }
