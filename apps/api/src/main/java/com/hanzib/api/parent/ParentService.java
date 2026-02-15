@@ -12,8 +12,8 @@ public class ParentService {
     private final ParentRepository parentRepository;
 
     @Transactional
-    public Parent create(String email) {
-        Parent parent = Parent.of(email);
+    public Parent create(String email, String nickname, ParentRole role) {
+        Parent parent = Parent.of(email, nickname, role);
         parentRepository.save(parent);
         return parent;
     }

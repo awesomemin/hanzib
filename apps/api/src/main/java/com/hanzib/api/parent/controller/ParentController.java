@@ -21,7 +21,7 @@ public class ParentController {
 
     @PostMapping
     public ResponseEntity<CreateParentResponse> createParent(@Valid @RequestBody CreateParentRequest request) {
-        Parent parent = parentService.create(request.email());
+        Parent parent = parentService.create(request.email(), request.nickname(), request.role());
 
         return ResponseEntity
                 .created(URI.create("/members/" + parent.getId()))
